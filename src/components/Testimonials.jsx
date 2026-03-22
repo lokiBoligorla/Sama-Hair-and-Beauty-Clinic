@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SliderModule from 'react-slick';
 const Slider = SliderModule.default || SliderModule;
 import { Quote, Star } from 'lucide-react';
