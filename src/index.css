@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deepBlue: #001b2b;
+  --color-gold-light: #f5e1a4;
+  --color-gold: #d4af37;
+  --color-gold-dark: #a68a2d;
+  --color-lavender-light: #e6e6fa;
+  --color-lavender: #967bb6;
+  --color-lavender-dark: #6a5acd;
+  --color-beige-light: #fdfcf0;
+  --color-beige: #f5f5dc;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-deepBlue text-beige-light font-sans selection:bg-gold selection:text-deepBlue;
+    background: radial-gradient(circle at center, #002b45 0%, #001b2b 100%);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .gold-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-light via-gold to-gold-dark;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Slick Carousel Customization */
+.slick-dots li button:after {
+  color: #d4af37 !important;
+}
+
+.slick-dots li.slick-active button:after {
+  color: #f5e1a4 !important;
+}
